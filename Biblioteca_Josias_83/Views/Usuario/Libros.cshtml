@@ -4,32 +4,140 @@
     var libros = Model as List<Biblioteca_Josias_83.Models.Libro>;
 }
 
-<div class="container mt-4">
-    <h1 class="text-center mb-4">Nuestros Libros</h1>
-    <p class="text-center">Descubre nuestra selección completa de libros.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Paleta de colores */
+        :root {
+            --primario: #539FA2;
+            --secundario: #72B1A4;
+            --terciario: #ABCCB1;
+            --fondo: #F5F5F5;
+            --suave: #FFFFFF;
+            --sombra: rgba(0, 0, 0, 0.1);
+        }
 
-    <!-- Listado de Libros -->
-    <div class="row">
-        @foreach (var libro in libros)
-        {
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(libro.Imagen)" class="card-img-top" alt="@libro.Titulo" />
-                    <div class="card-body">
-                        <h5 class="card-title">@libro.Titulo</h5>
-                        <p class="card-text">
-                            <strong>Descripción:</strong> @libro.Descripcion <br />
-                            <strong>Año de Publicación:</strong> @libro.AñoPublicacion <br />
-                            <strong>Editorial:</strong> @libro.Editorial <br />
-                            <strong>Categoría:</strong> @libro.Categorias.Nombre <br />
-                            <strong>Autor:</strong> @libro.Autores.Nombre
-                        </p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="@libro.UrlLectura" target="_blank" class="btn btn-primary">Leer Libro</a>
+        body {
+            background-color: var(--fondo);
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1, h2 {
+            color: var(--primario);
+            font-weight: bold;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px var(--sombra);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--suave);
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 8px 16px var(--sombra);
+            }
+
+        .card-img-top {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: var(--primario);
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .card-footer {
+            background-color: var(--suave);
+            border-top: none;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            padding: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--primario);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: var(--secundario);
+            }
+
+        .text-center {
+            color: var(--primario);
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem !important;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Nuestros Libros</h1>
+        <p class="text-center">Descubre nuestra selección completa de libros.</p>
+
+        <!-- Listado de Libros -->
+        <div class="row">
+            @foreach (var libro in libros)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(libro.Imagen)" class="card-img-top" alt="@libro.Titulo" />
+                        <div class="card-body">
+                            <h5 class="card-title">@libro.Titulo</h5>
+                            <p class="card-text">
+                                <strong>Descripción:</strong> @libro.Descripcion <br />
+                                <strong>Año de Publicación:</strong> @libro.AñoPublicacion <br />
+                                <strong>Editorial:</strong> @libro.Editorial <br />
+                                <strong>Categoría:</strong> @libro.Categorias.Nombre <br />
+                                <strong>Autor:</strong> @libro.Autores.Nombre
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="@libro.UrlLectura" target="_blank" class="btn btn-primary">Leer Libro</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -10,8 +10,6 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Biblioteca_Josias_83
 build_property.RootNamespace = Biblioteca_Josias_83
 build_property.ProjectDir = /Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -30,6 +28,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yL0VkaXRhckF1dG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Author/IndexAutores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yL0luZGV4QXV0b3Jlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Book/CrearLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9vay9DcmVhckxpYnJvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Book/EditarLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9vay9FZGl0YXJMaWJyb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Book/IndexLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9vay9JbmRleExpYnJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Category/CrearCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvQ3JlYXJDYXRlZ29yaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Category/EditarCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvRWRpdGFyQ2F0ZWdvcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Category/IndexCategorias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvSW5kZXhDYXRlZ29yaWFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,8 +64,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Role/CrearRol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZS9DcmVhclJvbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Role/EditarRol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZS9FZGl0YXJSb2wuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Role/IndexRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUm9sZS9JbmRleFJvbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Shared/_LayoutNavbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXROYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Shared/_ValidationScriptsPartial.cshtml]
@@ -56,6 +102,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/User/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9pbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Usuario/Autores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9BdXRvcmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Usuario/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Usuario/Libros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9MaWJyb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/Usuario/VerLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9WZXJMaWJyby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Views/_ViewImports.cshtml]

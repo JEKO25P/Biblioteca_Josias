@@ -16,65 +16,116 @@
             --primario: #539FA2;
             --secundario: #72B1A4;
             --terciario: #ABCCB1;
-            --fondo: #C4DBB4;
-            --suave: #D4E2B6;
+            --fondo: #F5F5F5;
+            --suave: #FFFFFF;
+            --sombra: rgba(0, 0, 0, 0.1);
         }
 
         body {
             background-color: var(--fondo);
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
         .login-container {
             max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
+            width: 100%;
+            padding: 40px;
             background-color: var(--suave);
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px var(--sombra);
+            text-align: center;
         }
 
         h2 {
             color: var(--primario);
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
         }
 
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-label {
+            color: var(--primario);
+            font-weight: 500;
+        }
+
+        .form-control {
+            border: 1px solid var(--terciario);
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+            .form-control:focus {
+                border-color: var(--primario);
+                box-shadow: 0 0 5px rgba(83, 159, 162, 0.5);
+            }
+
         .btn-primary {
-            background-color: var(--secundario);
+            background-color: var(--primario);
             border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
             .btn-primary:hover {
-                background-color: var(--primario);
+                background-color: var(--secundario);
             }
 
         .text-danger {
             color: #dc3545;
+            font-size: 14px;
+            margin-top: 10px;
         }
+
+        .login-container a {
+            color: var(--primario);
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin-top: 15px;
+        }
+
+            .login-container a:hover {
+                text-decoration: underline;
+            }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="login-container">
-            <h2 class="text-center">Iniciar Sesión</h2>
-            <form asp-action="Authenticate" method="post" class="mt-4">
-                <div class="form-group mb-3">
-                    <label for="username" class="form-label">Usuario</label>
-                    <input type="text" id="username" name="Username" class="form-control" placeholder="Ingresa tu usuario" required />
-                </div>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form asp-action="Authenticate" method="post">
+            <div class="form-group">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" id="username" name="Username" class="form-control" placeholder="Ingresa tu usuario" required />
+            </div>
 
-                <div class="form-group mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" id="password" name="Password" class="form-control" placeholder="Ingresa tu contraseña" required />
-                </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" id="password" name="Password" class="form-control" placeholder="Ingresa tu contraseña" required />
+            </div>
 
-                @if (ViewBag.ErrorMessage != null)
-                {
-                    <div class="text-danger text-center mb-3">@ViewBag.ErrorMessage</div>
-                }
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="text-danger text-center mb-3">@ViewBag.ErrorMessage</div>
+            }
 
-                <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
-            </form>
-        </div>
+            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

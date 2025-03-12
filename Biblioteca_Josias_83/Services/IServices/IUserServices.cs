@@ -1,5 +1,6 @@
 ﻿using System;
 using Biblioteca_Josias_83.Models;
+using Biblioteca_Josias_83.Models.Domain;
 
 namespace Biblioteca_Josias_83.Services.IServices
 {

@@ -15,13 +15,17 @@
     <None Remove="Services\Services\" />
     <None Remove="Services\IServices\" />
     <None Remove="Views\Admin\" />
-    <None Remove="Views\Login\" />
     <None Remove="Views\Author\" />
     <None Remove="Views\Book\" />
     <None Remove="Views\Category\" />
     <None Remove="Views\Role\" />
     <None Remove="Views\User\" />
     <None Remove="Views\Usuario\" />
+    <None Remove="Views\Login\" />
+    <None Remove="Views\Usuario\Home.cshtml" />
+    <None Remove="Views\Shared\_LayoutNavbar.cshtml" />
+    <None Remove="Views\Usuario\Libros.cshtml" />
+    <None Remove="Views\Usuario\Autores.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Domain\" />
@@ -31,13 +35,13 @@
     <Folder Include="Services\Services\" />
     <Folder Include="Services\IServices\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Login\" />
     <Folder Include="Views\Author\" />
     <Folder Include="Views\Book\" />
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Role\" />
     <Folder Include="Views\User\" />
     <Folder Include="Views\Usuario\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
@@ -54,23 +58,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="Views\Author\Template.cshtml" />
-    <Content Remove="Views\Author\IndexAutores.cshtml" />
-    <Content Remove="Views\Book\CrearLibro.cshtml" />
-    <Content Remove="Views\Book\EditarLibros.cshtml" />
-    <Content Remove="Views\Book\IndexLibros.cshtml" />
-    <Content Remove="Views\Category\CrearCategoria.cshtml" />
-    <Content Remove="Views\Category\EditarCategoria.cshtml" />
-    <Content Remove="Views\Category\IndexCategorias.cshtml" />
-    <Content Remove="Views\Login\Login.cshtml" />
-    <Content Remove="Views\Role\CrearRol.cshtml" />
-    <Content Remove="Views\Role\EditarRol.cshtml" />
-    <Content Remove="Views\Role\IndexRoles.cshtml" />
-    <Content Remove="Views\Shared\_LayoutNavbar.cshtml" />
-    <Content Remove="Views\Usuario\Autores.cshtml" />
-    <Content Remove="Views\Usuario\Home.cshtml" />
-    <Content Remove="Views\Usuario\Libros.cshtml" />
-    <Content Remove="Views\Usuario\VerLibro.cshtml" />
+  
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\Author\CrearAutor.cshtml">
@@ -109,10 +97,6 @@
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>IndexCategorias.cs</LastGenOutput>
     </None>
-    <None Include="Views\Login\Login.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>Login.cs</LastGenOutput>
-    </None>
     <None Include="Views\Role\CrearRol.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>CrearRol.cs</LastGenOutput>
@@ -124,22 +108,6 @@
     <None Include="Views\Role\IndexRoles.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>IndexRoles.cs</LastGenOutput>
-    </None>
-    <None Include="Views\Shared\_LayoutNavbar.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>_LayoutNavbar.cs</LastGenOutput>
-    </None>
-    <None Include="Views\Usuario\Autores.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>Autores.cs</LastGenOutput>
-    </None>
-    <None Include="Views\Usuario\Home.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>Home.cs</LastGenOutput>
-    </None>
-    <None Include="Views\Usuario\Libros.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>Libros.cs</LastGenOutput>
     </None>
     <None Include="Views\Usuario\VerLibro.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
@@ -171,12 +139,6 @@
     <Compile Update="Views\Category\EditarCategoria.cs">
       <DependentUpon>EditarCategoria.cshtml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Category\IndexCategorias.cs">
-      <DependentUpon>IndexCategorias.cshtml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Login\Login.cs">
-      <DependentUpon>Login.cshtml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Role\CrearRol.cs">
       <DependentUpon>CrearRol.cshtml</DependentUpon>
     </Compile>
@@ -185,18 +147,6 @@
     </Compile>
     <Compile Update="Views\Role\IndexRoles.cs">
       <DependentUpon>IndexRoles.cshtml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Shared\_LayoutNavbar.cs">
-      <DependentUpon>_LayoutNavbar.cshtml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Usuario\Autores.cs">
-      <DependentUpon>Autores.cshtml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Usuario\Home.cs">
-      <DependentUpon>Home.cshtml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Usuario\Libros.cs">
-      <DependentUpon>Libros.cshtml</DependentUpon>
     </Compile>
     <Compile Update="Views\Usuario\VerLibro.cs">
       <DependentUpon>VerLibro.cshtml</DependentUpon>

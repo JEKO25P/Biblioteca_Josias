@@ -1,5 +1,6 @@
 ﻿using System;
 using Biblioteca_Josias_83.Models;
+using Biblioteca_Josias_83.Models.Domain;
 using Biblioteca_Josias_83.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,11 +15,13 @@ namespace Biblioteca_Josias_83.Controllers
             _userServices = userServices;
             _rolServices = rolServices;
         }
+
         public IActionResult Index()
         {
             var result = _userServices.GetUsuarios();
             return View(result);
         }
+
         [HttpGet]
         public IActionResult Crear()
         {
@@ -28,12 +31,10 @@ namespace Biblioteca_Josias_83.Controllers
             return View();
         }
 
-
         [HttpPost]
         public IActionResult Crear(Usuario request)
         {
             _userServices.CreateUser(request);
-
             return RedirectToAction("Index");
         }
 
@@ -45,7 +46,6 @@ namespace Biblioteca_Josias_83.Controllers
             {
                 return NotFound();
             }
-
 
             var roles = _rolServices.GetRoles();
             ViewBag.Roles = roles;
@@ -64,8 +64,6 @@ namespace Biblioteca_Josias_83.Controllers
             return View(request);
         }
 
-
-
         [HttpDelete]
         public IActionResult Eliminar(int id)
         {
@@ -81,4 +79,3 @@ namespace Biblioteca_Josias_83.Controllers
         }
     }
 }
-

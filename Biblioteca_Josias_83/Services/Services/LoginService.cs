@@ -37,7 +37,7 @@ namespace Biblioteca_Josias_83.Services.Services
             }
 
             // Paso 4: Generar el token JWT si las credenciales son válidas
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Secret"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
