@@ -1,0 +1,101 @@
+﻿@*@model IEnumerable<Biblioteca_Josias_83.Models.Libro>
+
+    @{
+        Layout = "_LayoutDashboard";
+    }
+
+    <h1>
+        Dashoard
+    </h1>
+
+    <h2>Lista de Libros</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Año de Publicación</th>
+        </tr>
+        @foreach (var libro in Model)
+        {
+            <tr>
+                <td>@libro.Id</td>
+                <td>@libro.Titulo</td>
+                <td>@libro.Autor</td>
+                <td>@libro.AnioPublicacion</td>
+            </tr>
+        }
+    </table>*@
+
+
+
+@model IEnumerable<Biblioteca_Josias_83.Models.Libro>
+
+@{
+    Layout = "_LayoutDashboard";
+}
+
+<h1>Dashboard</h1>
+
+<!-- Botón para agregar un nuevo libro -->
+<div class="row">
+    <div class="offset-10 col-3 mb-3">
+        <a asp-action="Crear" asp-controller="Libro" class="btn-success mx-auto btn-lg">
+            <i class="fa-solid fa-book"></i> Nuevo Libro
+        </a>
+    </div>
+</div>
+
+<!-- Contenedor de la tabla de libros -->
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Lista de Libros</strong></h1>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    @if (Model.Count() > 0)
+                    {
+                        <table class="table table-bordered" id="tblLibros" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Título</th>
+                                    <th>Autor</th>
+                                    <th>Año de Publicación</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var libro in Model)
+                                {
+                                    <tr>
+                                        <td>@libro.Id</td>
+                                        <td>@libro.Titulo</td>
+                                        <td>@libro.Autor</td>
+                                        <td>@libro.AnioPublicacion</td>
+                                        <td>
+                                            <a class="btn btn-warning" asp-action="Editar" asp-controller="Libro" asp-route-id="@libro.Id">
+                                                <i class="fa-solid fa-pen-to-square"></i> Editar
+                                            </a>
+                                            <a class="btn btn-danger" asp-action="Eliminar" asp-controller="Libro" asp-route-id="@libro.Id">
+                                                <i class="fa-solid fa-trash"></i> Eliminar
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p>No hay libros registrados.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

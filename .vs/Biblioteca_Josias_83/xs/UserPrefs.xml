@@ -1,0 +1,79 @@
+﻿<Properties StartupConfiguration="{ACE6A51C-A4A5-4F9A-BBB2-863AB8DE7ECF}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Biblioteca_Josias_83/appsettings.json">
+    <Files>
+      <File FileName="Biblioteca_Josias_83/Services/Services/UsuarioServices.cs" />
+      <File FileName="Biblioteca_Josias_83/Services/IServices/IUsuarioServices.cs" />
+      <File FileName="Biblioteca_Josias_83/Program.cs" />
+      <File FileName="Biblioteca_Josias_83/Controllers/HomeController.cs" />
+      <File FileName="Biblioteca_Josias_83/Controllers/UsuarioController.cs" />
+      <File FileName="Biblioteca_Josias_83/Views/Home/Index.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Models/Domain/Usuario.cs" />
+      <File FileName="Biblioteca_Josias_83/Views/Usuario/index.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Views/Shared/_LayoutDashboard.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Views/Shared/_Layout.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="Biblioteca_Josias_83/wwwroot/css/site.css" />
+      <File FileName="Biblioteca_Josias_83/Views/Usuario/Editar.cshtml" />
+      <File FileName="Biblioteca_Josias_83/appsettings.json" Line="15" Column="64" />
+      <File FileName="Biblioteca_Josias_83/appsettings.Development.json" />
+      <File FileName="Biblioteca_Josias_83/Migrations/20250217172836_InitialCreate.cs" />
+      <File FileName="Biblioteca_Josias_83/Migrations/ApplicationDbContextModelSnapshot.cs" />
+      <File FileName="Biblioteca_Josias_83/Views/Usuario/Crear.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Context/ApplicationDbContext.cs" />
+      <File FileName="Biblioteca_Josias_83/Models/Domain/Rol.cs" />
+      <File FileName="Biblioteca_Josias_83/Views/Home/Privacy.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Services/Services/JwtService.cs" />
+      <File FileName="Biblioteca_Josias_83/Controllers/AdminController.cs" />
+      <File FileName="Biblioteca_Josias_83/Views/Admin/Index.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Controllers/AccountController.cs" />
+      <File FileName="Biblioteca_Josias_83/Views/_ViewStart.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Models/Domain/Libro.cs" />
+      <File FileName="Biblioteca_Josias_83/Migrations/20250217172836_InitialCreate.Designer.cs" />
+      <File FileName="Biblioteca_Josias_83/Controllers/LibroController.cs" />
+      <File FileName="Biblioteca_Josias_83/Views/Libro/Index.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Properties/launchSettings.json" />
+      <File FileName="Biblioteca_Josias_83/Migrations/20250310214245_AgregarTablaUsuarios.cs" />
+      <File FileName="Biblioteca_Josias_83/Migrations/20250305065938_CreateTableLibros.cs" />
+      <File FileName="Biblioteca_Josias_83/Views/Shared/_LayoutLogin.cshtml" />
+      <File FileName="Biblioteca_Josias_83/package.json" />
+      <File FileName="Biblioteca_Josias_83/Views/_ViewImports.cshtml" />
+      <File FileName="Biblioteca_Josias_83/Views/Shared/Error.cshtml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Biblioteca_Josias_83" expanded="True">
+            <Node name="Biblioteca_Josias_83" expanded="True">
+              <Node name="Context" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Domain" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="IServices" expanded="True" />
+                <Node name="Services" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Libro" expanded="True" />
+                <Node name="Login" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="Usuario" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+              <Node name="appsettings.json" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Biblioteca__Josias__83 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
