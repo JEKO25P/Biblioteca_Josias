@@ -1,0 +1,50 @@
+﻿@model Biblioteca_Josias_83.Models.Domain.Autor
+@using Biblioteca_Josias_83.Models.Domain
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar autor</strong></h1>
+            </div>
+
+            <div class="card-body">
+                <form asp-action="EditarAutor" method="post" enctype="multipart/form-data">
+                    <input asp-for="PkAutor" type="hidden" />
+
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Ingresa el nombre del autor" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Foto" class="control-label"></label>
+                        <!-- Si ya existe una foto, mostrarla -->
+                        @if (Model.Foto != null && Model.Foto.Length > 0)
+                        {
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Foto)" alt="Foto del autor" width="100" height="100" />
+                        }
+
+                        <input type="file" name="FotoFile" class="form-control" accept="image/*" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Descripcion" class="control-label"></label>
+                        <textarea asp-for="Descripcion" class="form-control" placeholder="Ingresa la descripción" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto">
+                            <i class="bi bi-person-fill"></i> Guardar
+                        </button>
+                    </div>
+                </form>
+
+                <a asp-controller="Author" asp-action="IndexAutores">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

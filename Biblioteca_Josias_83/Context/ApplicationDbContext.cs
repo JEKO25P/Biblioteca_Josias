@@ -1,42 +1,41 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Biblioteca_Josias_83.Models;
+using Biblioteca_Josias_83.Models.Domain;
+
 namespace Biblioteca_Josias_83.Context
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions options) : base(options) { }
-        //modelos a mapear
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Rol> Roles { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Autor> Autores { get; set; }
         public DbSet<Libro> Libros { get; set; }
+        public DbSet<Favorito> Favoritos { get; set; }
+        public DbSet<LibrosCategorias> LibrosCategorias { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Rol>().HasData(
-                new Rol { PkRol = 1, Nombre = "Admin" }, // Rol de administrador
-                new Rol { PkRol = 2, Nombre = "Usuario" } // Rol de usuario regular
-            );
+            // Configuración de la tabla LibrosCategorias
+            modelBuilder.Entity<LibrosCategorias>()
+                .HasKey(lc => lc.PkLibrosCategorias);
 
-            modelBuilder.Entity<Usuario>().HasData(
-                new Usuario
-                {
-                    PkUsuario = 1,
-                    Nombre = "Jonny",
-                    UserName = "admin",
-                    Password = "123",
-                    FkRol = 1 // Asignar rol de administrador
-                },
-                new Usuario
-                {
-                    PkUsuario = 2,
-                    Nombre = "Usuario",
-                    UserName = "user",
-                    Password = "123",
-                    FkRol = 2 // Asignar rol de usuario regular
-                }
-            );
+            modelBuilder.Entity<LibrosCategorias>()
+                .HasOne(lc => lc.Libros)
+                .WithMany(l => l.LibrosCategorias)
+                .HasForeignKey(lc => lc.FkLibro)
+                .OnDelete(DeleteBehavior.NoAction); // Evitar cascada
+
+            modelBuilder.Entity<LibrosCategorias>()
+                .HasOne(lc => lc.Categorias)
+                .WithMany(c => c.LibrosCategorias)
+                .HasForeignKey(lc => lc.FkCategoria)
+                .OnDelete(DeleteBehavior.NoAction); // Evitar cascada
         }
 
     }

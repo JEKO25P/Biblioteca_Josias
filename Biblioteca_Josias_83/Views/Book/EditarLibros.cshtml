@@ -1,0 +1,79 @@
+﻿@model Biblioteca_Josias_83.Models.Libro
+@using Biblioteca_Josias_83.Models.Domain
+
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+    var categoriasList = (List<Categoria>)ViewBag.Categorias;
+    var autoresList = (List<Autor>)ViewBag.Autores;
+}
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar libro</strong></h1>
+            </div>
+
+            <div class="card-body">
+                <form asp-action="EditarLibros" method="post" enctype="multipart/form-data">
+                    <input asp-for="PkLibro" type="hidden" />
+
+                    <div class="form-group">
+                        <label asp-for="Titulo" class="control-label"></label>
+                        <input asp-for="Titulo" class="form-control" placeholder="Ingresa el nombre del libro" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Descripcion" class="control-label"></label>
+                        <textarea asp-for="Descripcion" class="form-control" placeholder="Ingresa la descripción" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Imagen" class="control-label"></label>
+                        <!-- Si ya existe una imagen, mostrarla -->
+                        @if (Model.Imagen != null && Model.Imagen.Length > 0)
+                        {
+                            <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Imagen)" alt="Imagen de Libro" width="100" height="100" />
+                        }
+
+                        <input type="file" name="ImagenFile" class="form-control" accept="image/*" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categories">Categorías</label>
+                        <select id="categories" name="CategoryIds" class="form-control" multiple>
+                            @foreach (var category in ViewBag.Categories as List<Biblioteca_Josias_83.Models.Domain.Categoria>)
+                            {
+                                <option value="@category.PkCategoria">@category.Nombre</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FkAutor" class="control-label">Autor</label>
+                        <select asp-for="FkAutor" class="form-control" asp-items="@(new SelectList(autoresList, "PkAutor", "Nombre"))"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AñoPublicacion" class="control-label">Fecha de Publicación</label>
+                        <input asp-for="AñoPublicacion" type="number" class="form-control" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Editorial" class="control-label"></label>
+                        <input asp-for="Editorial" class="form-control" placeholder="Ingresa la editorial" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="UrlLectura" class="control-label"></label>
+                        <input asp-for="UrlLectura" type="url" class="form-control" placeholder="Ingresa la URL de lectura" required />
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto"><i class="bi bi-save"></i> Guardar</button>
+                    </div>
+                </form>
+
+                <a asp-controller="Book" asp-action="IndexLibros">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

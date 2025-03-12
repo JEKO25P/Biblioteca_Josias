@@ -77,3 +77,4 @@
 /Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/bin/Debug/net7.0/package.json
 /Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/obj/Debug/net7.0/Biblioteca_Josias_83.csproj.CopyComplete
+/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/obj/Debug/net7.0/Biblioteca_Josias_83.sourcelink.json

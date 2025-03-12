@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = null; // Desactiva el layout para esta vista específica
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Paleta de colores */
+        :root {
+            --primario: #539FA2;
+            --secundario: #72B1A4;
+            --terciario: #ABCCB1;
+            --fondo: #C4DBB4;
+            --suave: #D4E2B6;
+        }
+
+        body {
+            background-color: var(--fondo);
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: var(--suave);
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primario);
+        }
+
+        .btn-primary {
+            background-color: var(--secundario);
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: var(--primario);
+            }
+
+        .text-danger {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h2 class="text-center">Iniciar Sesión</h2>
+            <form asp-action="Authenticate" method="post" class="mt-4">
+                <div class="form-group mb-3">
+                    <label for="username" class="form-label">Usuario</label>
+                    <input type="text" id="username" name="Username" class="form-control" placeholder="Ingresa tu usuario" required />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" id="password" name="Password" class="form-control" placeholder="Ingresa tu contraseña" required />
+                </div>
+
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="text-danger text-center mb-3">@ViewBag.ErrorMessage</div>
+                }
+
+                <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

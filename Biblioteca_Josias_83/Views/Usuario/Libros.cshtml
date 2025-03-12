@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_layoutNavbar.cshtml"; // Especificar el layout
+    ViewData["Title"] = "Listado de Libros";
+    var libros = Model as List<Biblioteca_Josias_83.Models.Libro>;
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Nuestros Libros</h1>
+    <p class="text-center">Descubre nuestra selección completa de libros.</p>
+
+    <!-- Listado de Libros -->
+    <div class="row">
+        @foreach (var libro in libros)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(libro.Imagen)" class="card-img-top" alt="@libro.Titulo" />
+                    <div class="card-body">
+                        <h5 class="card-title">@libro.Titulo</h5>
+                        <p class="card-text">
+                            <strong>Descripción:</strong> @libro.Descripcion <br />
+                            <strong>Año de Publicación:</strong> @libro.AñoPublicacion <br />
+                            <strong>Editorial:</strong> @libro.Editorial <br />
+                            <strong>Categoría:</strong> @libro.Categorias.Nombre <br />
+                            <strong>Autor:</strong> @libro.Autores.Nombre
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="@libro.UrlLectura" target="_blank" class="btn btn-primary">Leer Libro</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

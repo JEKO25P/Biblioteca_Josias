@@ -1,0 +1,36 @@
+﻿@model Biblioteca_Josias_83.Models.Rol
+@using Biblioteca_Josias_83.Models.Domain
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar rol</strong></h1>
+            </div>
+
+            <div class="card-body">
+                <form asp-action="EditarRol" method="post">
+                    <input asp-for="PkRol" type="hidden" />
+
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Ingresa el nombre del rol" required />
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto">
+                            <i class="bi bi-person-fill"></i> Guardar
+                        </button>
+                    </div>
+                </form>
+
+                <a asp-controller="Role" asp-action="IndexRoles">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿@model Biblioteca_Josias_83.Models.Libro
+@using Biblioteca_Josias_83.Models.Domain
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+    var categoriasList = (List<Categoria>)ViewBag.Categorias;
+    var autoresList = (List<Autor>)ViewBag.Autores;
+}
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Crear libro</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="CrearLibro" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label asp-for="Titulo" class="control-label"></label>
+                        <input asp-for="Titulo" class="form-control" placeholder="Ingresa el nombre del libro" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Descripcion" class="control-label"></label>
+                        <textarea asp-for="Descripcion" class="form-control" placeholder="Ingresa la descripción" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Imagen</label>
+                        <input type="file" name="ImagenFile" class="form-control" accept="image/*" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FkCategoria" class="control-label">Categoría</label>
+                        <select asp-for="FkCategoria" class="form-control" asp-items="@(new SelectList(categoriasList, "PkCategoria", "Nombre"))"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FkAutor" class="control-label">Autor</label>
+                        <select asp-for="FkAutor" class="form-control" asp-items="@(new SelectList(autoresList, "PkAutor", "Nombre"))"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AñoPublicacion" class="control-label">Año de Publicación</label>
+                        <input asp-for="AñoPublicacion" type="number" class="form-control" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Editorial" class="control-label"></label>
+                        <input asp-for="Editorial" class="form-control" placeholder="Ingresa la editorial" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="UrlLectura" class="control-label"></label>
+                        <input asp-for="UrlLectura" type="url" class="form-control" placeholder="Ingresa la URL de lectura" required />
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto"><i class="bi bi-save"></i> Guardar</button>
+                    </div>
+
+                </form>
+
+                <a asp-controller="Book" asp-action="IndexLibros">Volver</a>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>

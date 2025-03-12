@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_layoutNavbar.cshtml"; // Especificar el layout
+    ViewData["Title"] = "Listado de Autores";
+    var autores = Model as List<Biblioteca_Josias_83.Models.Domain.Autor>;
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Nuestros Autores</h1>
+    <p class="text-center">Conoce a los autores que hacen posible esta biblioteca.</p>
+
+    <!-- Listado de Autores -->
+    <div class="row">
+        @foreach (var autor in autores)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(autor.Foto)" class="card-img-top" alt="@autor.Nombre" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@autor.Nombre</h5>
+                        <p class="card-text">@autor.Descripcion</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

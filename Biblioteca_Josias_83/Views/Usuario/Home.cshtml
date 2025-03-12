@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_layoutNavbar.cshtml"; // Especificar el layout
+    ViewData["Title"] = "Home - Bienvenido";
+    var libros = ViewBag.Libros as List<Biblioteca_Josias_83.Models.Libro>;
+    var autores = ViewBag.Autores as List<Biblioteca_Josias_83.Models.Domain.Autor>;
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Bienvenido a la Biblioteca</h1>
+    <p class="text-center">Explora los libros destacados y conoce a los autores.</p>
+
+    <!-- Sección de Libros Destacados -->
+    <section class="mt-5">
+        <h2 class="mb-4">Libros Destacados</h2>
+        <div class="row">
+            @foreach (var libro in libros)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(libro.Imagen)" class="card-img-top" alt="@libro.Titulo" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">@libro.Titulo</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- Sección de Autores Destacados -->
+    <section class="mt-5">
+        <h2 class="mb-4">Autores Destacados</h2>
+        <div class="row">
+            @foreach (var autor in autores)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(autor.Foto)" class="card-img-top" alt="@autor.Nombre" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">@autor.Nombre</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+</div>

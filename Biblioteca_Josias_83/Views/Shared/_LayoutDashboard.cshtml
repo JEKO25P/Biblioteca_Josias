@@ -4,10 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Biblioteca_Josias_83</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Biblioteca_Josias_83.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/Biblioteca_Josias_83.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+
+    <!-- jQuery (solo desde CDN, eliminando la carga duplicada) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
         .sidebar {
             height: 100vh;
@@ -15,71 +28,61 @@
             position: fixed;
             top: 0;
             left: 0;
-            background-color: #000000;
+            background-color: #343a40;
             padding-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid white;
-            margin-bottom: 20px;
-            1
-        }
-
-        .sidebar a, p {
-            padding: 15px;
-            text-align: left;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            display: block;
-            width: 100%;
-        }
-
-            .sidebar a:hover {
-                background-color: #515151;
+            .sidebar a {
+                padding: 10px 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #fff;
+                display: block;
             }
 
-        .content {
+                .sidebar a:hover {
+                    background-color: #495057;
+                }
+
+        .main-content {
             margin-left: 250px;
             padding: 20px;
         }
     </style>
 </head>
 <body>
-
     <div class="sidebar">
-        <img src="https://madridislamico.org/wp-content/uploads/2020/05/Libros.jpg" alt="Perfil" class="profile-img">
-        <p>Josias Kumul</p>
-        <a href="/">Inicio</a>
-        <a href="#">Libros</a>
-        <a href="#">Categorías</a>
-        <a href="#">Mi Cuenta</a>
-        <a href="#">Contacto</a>
-        <a href="#">Configuración</a>
+        <a asp-area="" asp-controller="Admin" asp-action="AdminDashboard">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+        <a asp-area="" asp-controller="User" asp-action="Index">
+            <i class="fas fa-user"></i> Usuarios
+        </a>
+        <a asp-area="" asp-controller="Book" asp-action="IndexLibros">
+            <i class="fas fa-book"></i> Libros
+        </a>
+        <a asp-area="" asp-controller="Role" asp-action="IndexRoles">
+            <i class="fas fa-user-tag"></i> Roles
+        </a>
+        <a asp-area="" asp-controller="Category" asp-action="IndexCategorias">
+            <i class="fas fa-tags"></i> Categorías
+        </a>
+        <a asp-area="" asp-controller="Author" asp-action="IndexAutores">
+            <i class="fas fa-pen-nib"></i> Autores
+        </a>
+        <form asp-action="Logout" asp-controller="Login" method="post">
+            <button type="submit" class="btn btn-logout">Cerrar Sesión</button>
+        </form>
     </div>
 
-    <div class="content">
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
+    <div class="main-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
 </body>
 </html>

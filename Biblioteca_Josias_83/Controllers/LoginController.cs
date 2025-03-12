@@ -1,46 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Diagnostics;
 using Biblioteca_Josias_83.Models;
-using Biblioteca_Josias_83.Services;
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Mvc;
 
-public class LoginController : Controller
+namespace Biblioteca_Ross_Juan.Controllers
 {
-    private readonly JwtService _jwtService;
-
-    public LoginController(JwtService jwtService)
+    public class HomeController : Controller
     {
-        _jwtService = jwtService;
-    }
+        private readonly ILogger<HomeController> _logger;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    [HttpPost]
-    public IActionResult Index(Usuario usuario)
-    {
-        if (usuario.UserName == "admin" && usuario.Password == "123")
+        public HomeController(ILogger<HomeController> logger)
         {
-            // Generar un token JWT
-            var token = _jwtService.GenerateToken(usuario.UserName, "Admin");
-
-            // Guardar el token en una cookie (opcional)
-            Response.Cookies.Append("jwt", token, new CookieOptions
-            {
-                HttpOnly = true,
-                Secure = true, // Solo en HTTPS
-                SameSite = SameSiteMode.Strict
-            });
-
-            // Redirigir al Home/Index
-            return RedirectToAction("Index", "Home");
+            _logger = logger;
         }
 
-        ViewBag.Error = "Usuario o contraseña incorrectos";
-        return View();
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
 }

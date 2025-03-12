@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Biblioteca Ross Juan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Paleta de colores */
+        :root {
+            --primario: #539FA2;
+            --secundario: #72B1A4;
+            --terciario: #ABCCB1;
+            --fondo: #C4DBB4;
+            --suave: #D4E2B6;
+        }
+
+        body {
+            background-color: var(--fondo);
+            font-family: Arial, sans-serif;
+        }
+
+        nav.navbar {
+            background-color: var(--primario);
+        }
+
+            nav.navbar a.nav-link {
+                color: white !important;
+                font-weight: bold;
+            }
+
+                nav.navbar a.nav-link:hover {
+                    color: var(--suave) !important;
+                }
+
+        .btn-logout {
+            background-color: var(--secundario);
+            color: white;
+            border: none;
+        }
+
+            .btn-logout:hover {
+                background-color: var(--primario);
+            }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px 0;
+            background-color: var(--primario);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/Home">Biblioteca Josias Kumul</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Usuario" asp-action="Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Usuario" asp-action="Libros">Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Usuario" asp-action="Autores">Autores</a>
+                    </li>
+                </ul>
+                <form asp-action="Logout" asp-controller="Login" method="post">
+                    <button type="submit" class="btn btn-logout">Cerrar Sesión</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Biblioteca Josias Kumul. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

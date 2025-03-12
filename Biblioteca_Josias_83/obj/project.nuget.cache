@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SOpgn5HO//nHSCdzFoTTFBzIDGOsuMGV6ZcsS7jR16RP55zMdV4SS04lqxVd+vw3W6G9p+6CEGGliGvIGA09QA==",
+  "dgSpecHash": "pPorSBLyNWk=",
   "success": true,
   "projectFilePath": "/Users/josiaskumul/Projects/Biblioteca_Josias_83/Biblioteca_Josias_83/Biblioteca_Josias_83.csproj",
   "expectedPackageFiles": [
     "/Users/josiaskumul/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/josiaskumul/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
+    "/Users/josiaskumul/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/josiaskumul/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/josiaskumul/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.0/microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512",
     "/Users/josiaskumul/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

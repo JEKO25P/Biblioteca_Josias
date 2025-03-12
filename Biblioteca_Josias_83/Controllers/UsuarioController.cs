@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Biblioteca_Josias_83.Models;
+using Biblioteca_Josias_83.Models.Domain;
 using Biblioteca_Josias_83.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
@@ -11,86 +11,57 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Biblioteca_Josias_83.Controllers
 {
-    [Authorize(Roles = "Usuario")] // Solo accesible para el rol "Usuario"
-    public class UserController : Controller
-    {
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
     public class UsuarioController : Controller
     {
+        private readonly IBookServices _bookServices;
+        private readonly IAuthorServices _authorServices;
 
-        //creamos el constructor para acceder a los usuarios
-        private readonly IUsuarioServices _usuarioServices;
-        public UsuarioController(IUsuarioServices usuarioServices)
-
+        public UsuarioController(IBookServices bookServices, IAuthorServices authorServices)
         {
-            _usuarioServices = usuarioServices;
+            _bookServices = bookServices;
+            _authorServices = authorServices;
         }
 
-
-        // GET: /<controller>/
-        public IActionResult Index()
-        {
-            var result = _usuarioServices.ObtenerUsuario();
-            return View(result);
-        }
-
+        // Acción para el Home (3 libros y 3 autores como cards)
         [HttpGet]
-        public IActionResult Crear()
+        public IActionResult Home()
         {
+            var libros = _bookServices.GetBooks().Take(3).ToList(); // Toma 3 libros
+            var autores = _authorServices.GetAuthors().Take(3).ToList(); // Toma 3 autores
+
+            ViewBag.Libros = libros;
+            ViewBag.Autores = autores;
 
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Crear(Usuario request)
-        {
-            _usuarioServices.CrearUsuario(request);
-
-            return RedirectToAction("index");
-        }
-
-
+        // Acción para listar todos los libros (como cards)
         [HttpGet]
-        public IActionResult Editar(int id )
+        public IActionResult Libros()
         {
-            var result = _usuarioServices.GetUsuarioById(id);
-            return View(result);
+            var libros = _bookServices.GetBooks(); // Lista todos los libros
+            return View(libros);
         }
-        [HttpPost]
-        public async Task<IActionResult> Editar(Usuario request)
+
+        // Acción para ver un libro específico (detalles completos)
+        [HttpGet]
+        public IActionResult VerLibro(int id)
         {
-            bool isUpdate = await _usuarioServices.EditarUsuario(request);
-            if (isUpdate)
+            var libro = _bookServices.GetBook(id); // Busca el libro por ID
+            if (libro == null)
             {
-                return RedirectToAction("index");
+                return NotFound("El libro no fue encontrado.");
             }
-            ModelState.AddModelError("", "Ocurrio un error  al actualizar el usuario");
-            return View(request);
+            return View(libro);
         }
 
-        //[HttpPost]
-        //public IActionResult Eliminar(int id)
-        //{
-        //    _usuarioServices.EliminarUsuario(id);
-        //    return RedirectToAction("index");
-
-        //}
-
-        [HttpDelete]
-        [Route("Usuario/Eliminar/{id}")]
-        public IActionResult Eliminar(int id)
+        // Acción para listar todos los autores (como cards)
+        [HttpGet]
+        public IActionResult Autores()
         {
-            bool result = _usuarioServices.EliminarUsuario(id);
-            return Json(new { success = result });
+            var autores = _authorServices.GetAuthors(); // Lista todos los autores
+            return View(autores);
         }
-
-
-
-
     }
 }
 
